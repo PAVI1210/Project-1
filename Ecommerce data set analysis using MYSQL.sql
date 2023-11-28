@@ -57,7 +57,4 @@ GROUP BY payment_method
 ORDER BY Count DESC
 LIMIT 5;
 
-SELECT category, item_purchased, C FROM (
-SELECT category,item_purchased, COUNT(item_purchased) C ,ROW_NUMBER() OVER(PARTITION BY category ORDER BY COUNT(item_purchased)DESC ) as rn from shopdata
-GROUP BY category, item_purchased ) as b
-WHERE b.rn<=3;
+
